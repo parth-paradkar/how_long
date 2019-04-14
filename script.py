@@ -25,6 +25,9 @@ else:
     channel = soup.find('ul', class_="pl-header-details")
     channel = channel.find('a').text
     vid_time_obj = soup.find_all(class_='timestamp')
+    search_1 = soup.find('ul', class_='pl-header-details')
+    li_search = search_1.find_all('li')
+    li_list = [element.text for element in li_search]
     vid_times = [element.text for element in vid_time_obj]
 
     hrs = 0
@@ -53,3 +56,4 @@ else:
     print('No. of videos: ', num_vids)
     print('Total playlist duration: ', duration)
     print('Average video duration: ', avg_duration)
+    print(li_list[2])
