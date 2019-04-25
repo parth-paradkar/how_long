@@ -12,11 +12,8 @@ if not pattern.match(url):
     raise SyntaxError('Enter a valid URl')
 
 ret_obj = requests.get(url)
-with open('playlist.html', 'w') as f:
-    f.write(ret_obj.text)
 
-with open('playlist.html', 'r') as f:
-    soup = BeautifulSoup(f, 'lxml')
+soup = BeautifulSoup(ret_obj.content, 'lxml')
 
 if soup.find('h1', class_="pl-header-title") == None:
     raise SyntaxError('Enter a valid URL')
