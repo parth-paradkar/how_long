@@ -17,7 +17,6 @@ Enter the following code in your terminal
 
 ```
 $ python3 script.py https://www.youtube.com/playlist?list=PLJ8cMiYb3G5eLwIHwp0NAPJaLSo9qNexm
-
 ```
 
 Output:
